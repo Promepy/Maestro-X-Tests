@@ -1,0 +1,6 @@
+appId: com.twitter.android
+---
+- swipe:  
+    start: 50%, 95% 
+    end: 50%, 5% 
+    duration: 3000

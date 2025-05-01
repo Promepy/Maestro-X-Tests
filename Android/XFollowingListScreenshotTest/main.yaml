@@ -1,0 +1,13 @@
+appId: com.twitter.android
+---
+- evalScript: ${ output.items = [] }
+- evalScript: ${ output.isLastScreen = false }
+- evalScript: ${ output.nameIndex = 0 }
+- evalScript: ${ output.duplicateCount = 0}
+- evalScript: ${ output.logging = 0}
+- repeat:
+    while:
+      true: ${!output.isLastScreen}
+    commands:
+      - runFlow: captureScreen.yaml
+      - runFlow: scrollScreen.yaml

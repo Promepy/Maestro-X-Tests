@@ -1,0 +1,15 @@
+appId: com.twitter.android
+--- 
+- tapOn:
+    id: "com.twitter.android:id/name_item"  # Tap on the item once it is visible
+    index: ${output.i}
+          
+# wait for page to finish loading
+- waitForAnimationToEnd
+
+# screenshot that profile
+- takeScreenshot:
+    path: profile_${output.nameIndex}.png
+
+# go back to the list
+- back

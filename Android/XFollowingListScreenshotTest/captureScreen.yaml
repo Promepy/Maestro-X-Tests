@@ -1,0 +1,25 @@
+appId: com.twitter.android
+---
+- evalScript: ${ output.i = 0 }
+- evalScript: ${ console.log(output.logging) }
+- repeat:
+    while:
+      visible:
+        id: "com.twitter.android:id/name_item"
+        index: ${output.i}
+    commands:
+      - runFlow: logTexts.yaml
+      - evalScript: ${ output.i = output.i + 1 }
+- runScript: repeatElement.js
+- evalScript: ${ console.log(output.logging) }
+- evalScript: ${ output.i = output.duplicateCount }
+- evalScript: ${console.log(output.i)}
+- repeat:
+    while:
+      visible:
+        id: "com.twitter.android:id/name_item"
+        index: ${output.i}
+    commands:
+      - runFlow: work.yaml
+      - evalScript: ${ output.i = output.i + 1 }
+      - evalScript: ${ output.nameIndex = output.nameIndex + 1 }

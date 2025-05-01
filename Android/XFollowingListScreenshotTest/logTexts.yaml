@@ -1,0 +1,8 @@
+appId: com.twitter.android
+---
+- copyTextFrom:
+    id: "com.twitter.android:id/name_item"  # The ID of the element to access
+    index: ${output.i}
+
+#add to the respective lists
+- evalScript: ${ output.items.push(maestro.copiedText.trim()) }
